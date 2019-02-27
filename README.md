@@ -2,7 +2,7 @@
 
 This project aims to help you to set up a simple HTML page that forces the browser to reload an image using URL parameters.
 
-[Live demo](https://hhkaos.github.io/refresh-img//?url=http://turiscam.comunitatvalenciana.com/calp.jpg&interval=1000&width=300&collapsed=true)
+[Live demo](https://hhkaos.github.io/refresh-img//?url=http://turiscam.comunitatvalenciana.com/calp.jpg&interval=1000&width=700&collapsed=true)
 
 # How this code works
 
@@ -15,5 +15,5 @@ Parameters:
 Sample page:
 
 ```
-https://hhkaos.github.io/refresh-img//?url=http://turiscam.comunitatvalenciana.com/calp.jpg&interval=1000&width=300&collapsed=true
+https://hhkaos.github.io/refresh-img//?url=http://turiscam.comunitatvalenciana.com/calp.jpg&interval=1000&width=700&collapsed=true
 ```
