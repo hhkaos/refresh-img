@@ -21,7 +21,7 @@
             user = getParameterByName("user"),
             list = getParameterByName("list"),
             user = user? user : "hhkaos",
-            list = list? list : "innovation";
+            list = list? list : null;
 
             // https://developer.twitter.com/en/docs/twitter-for-websites/timelines/guides/parameter-reference
             var paramList = ["show-replies", "chrome", "theme", "width", "height", "tweet-limit", "link-color", "border-color", "aria-police", "dnt"];
@@ -58,15 +58,22 @@
           return t;
         }(document, "script", "twitter-wjs"));
 
+        if(user && list){
+            timelineParams = {
+              sourceType: "list",
+              ownerScreenName: user,
+              slug: list
+            }
+        }else{
+            timelineParams = {
+                    sourceType: "profile",
+                    screenName: user
+            }
+        }
+
         twttr.ready(function (twttr) {
             twttr.widgets.createTimeline(
-              {
-                sourceType: "list",
-                ownerScreenName: user,
-                slug: list
-              },
-              // Example:
-              // https://developer.twitter.com/en/docs/twitter-for-websites/timelines/guides/parameter-reference
+              timelineParams,
               document.getElementById("container"),
               params
             );
