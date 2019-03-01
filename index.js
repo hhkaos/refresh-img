@@ -14,16 +14,6 @@ params.interval = newInterval? parseInt(newInterval) : params.interval;
 var newWidth = getParameterByName("width");
 params['width'] = newWidth? parseInt(newWidth) : params['width'];
 
-function getParameterByName(name, url) {
-	if (!url) url = window.location.href;
-	name = name.replace(/[\[\]]/g, '\\$&');
-	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-	results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
 if(getParameterByName("collapsed")){
 	document.querySelector('body').className="collapsed"
 }
